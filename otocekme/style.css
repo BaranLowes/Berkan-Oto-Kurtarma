@@ -1,0 +1,572 @@
+/* ================================================
+   BERKAN OTO KURTARMA - UPGRADED STYLE.CSS (2026)
+   Tasarım: Baran ÖZSOY + UNCHAINED GROK
+   Tema: Ultra Dark + Kehribar + Glassmorphism
+   ================================================ */
+
+:root {
+    --bg-dark: #1e1e24;
+    --bg-darker: #151519;
+    --text-light: #f5f5f5;
+    --text-muted: #a0a0a0;
+    --accent: #ffb703;
+    --accent-hover: #fb8500;
+    --white: #ffffff;
+    --glass: rgba(30, 30, 36, 0.75);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ====================== NAV ====================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    background: rgba(21, 21, 25, 0.95);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.logo h2 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: #111;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(255, 183, 3, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(251, 133, 0, 0.4);
+    color: var(--white);
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: var(--accent);
+    cursor: pointer;
+}
+
+/* ====================== HERO ====================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(21,21,25,0.85), rgba(21,21,25,0.92)),
+                url('https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(transparent, var(--bg-dark));
+}
+
+.hero-content h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.hero-content span { color: var(--accent); }
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto 40px;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+    transition: all 0.4s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.08);
+    background: #1eb956;
+}
+
+/* ====================== HİZMETLER ====================== */
+.services {
+    padding: 120px 5% 100px;
+    background-color: var(--bg-darker);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 70px;
+    font-weight: 800;
+}
+
+.section-title span { color: var(--accent); }
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--bg-dark);
+    padding: 55px 35px;
+    border-radius: 16px;
+    width: 360px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255,183,3,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,183,3,0.2), transparent);
+    transition: 0.7s;
+}
+
+.card:hover::before { left: 200%; }
+
+.card:hover {
+    transform: translateY(-18px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 25px 50px rgba(255,183,3,0.25);
+}
+
+.card i {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    transition: 0.4s;
+}
+
+.card:hover i { transform: scale(1.15) rotate(12deg); }
+
+/* ====================== FİYAT HESAPLAMA ====================== */
+.calculator-section {
+    padding: 120px 5%;
+    background: var(--bg-dark);
+}
+
+.calc-container {
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    padding: 45px;
+    border-radius: 20px;
+    max-width: 620px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,183,3,0.15);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(30,30,36,0.8);
+    margin-bottom: 22px;
+    border-radius: 12px;
+    padding: 14px 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.3s;
+}
+
+.input-group:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255,183,3,0.2);
+}
+
+.input-group i { color: var(--accent); margin-right: 16px; font-size: 1.3rem; }
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.15rem;
+    outline: none;
+}
+
+.calc-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.result-box {
+    margin-top: 35px;
+    background: #1e1e24;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 6px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(255,183,3,0.2);
+    transition: all 0.4s ease;
+}
+
+.result-box.hidden { display: none; }
+
+.result-box h3 { font-size: 2.1rem; margin-bottom: 12px; }
+.result-box h3 span { color: #25D366; }
+
+.autocomplete-list {
+    background: #1e1e24;
+    border: 1px solid rgba(255,183,3,0.3);
+    border-radius: 12px;
+    margin-top: 8px;
+    max-height: 240px;
+    overflow-y: auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.autocomplete-item {
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.autocomplete-item:hover {
+    background: rgba(255,183,3,0.25);
+    color: white;
+}
+
+/* ====================== HAKKIMIZDA ====================== */
+.about {
+    padding: 120px 5%;
+    background: var(--bg-darker);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.about-image .image-placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 480px;
+    background: linear-gradient(135deg, #1e1e24, #2a2a32);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+    border: 3px solid rgba(255,183,3,0.2);
+}
+
+.image-placeholder i {
+    font-size: 8rem;
+    color: var(--accent);
+    opacity: 0.25;
+    transition: 0.6s;
+}
+
+.about-container:hover .image-placeholder i {
+    opacity: 0.4;
+    transform: scale(1.1);
+}
+
+/* ====================== FOOTER ====================== */
+footer {
+    background: #0d0d0f;
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.9rem;
+}
+
+/* ====================== MOBİL MENÜ - YENİ DÜZELTME ====================== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        font-size: 32px;
+        color: var(--accent);
+        z-index: 1001;
+    }
+
+    .contact-btn {
+        display: none;
+    }
+
+    /* Masaüstü linklerini tamamen gizle */
+    .nav-links {
+        display: none !important;
+    }
+
+    /* Mobil menü açıldığında */
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #151519;
+        z-index: 9999;
+        padding-top: 100px;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 0 40px rgba(0,0,0,0.9);
+    }
+
+    .nav-links a {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #f5f5f5;
+        margin: 12px 0;
+        padding: 18px 40px;
+        width: 85%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,183,3,0.25);
+        transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #ffb703;
+        background: rgba(255,183,3,0.1);
+        border-radius: 12px;
+    }
+
+    /* BÜYÜK ÇARPI BUTONU (sağ üstte) */
+    .nav-links::after {
+        content: '✕';
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        font-size: 48px;
+        color: #ffb703;
+        cursor: pointer;
+        z-index: 10000;
+        line-height: 1;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-container { flex-direction: column; text-align: center; gap: 50px; }
+}
+
+/* ====================== YENİ HAKKIMIZDA - ULTRA VURUCU ====================== */
+.about {
+    padding: 140px 5%;
+    background: linear-gradient(135deg, #151519, #1e1e24);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.experience-title {
+    font-size: clamp(3.2rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.experience-title .highlight {
+    color: #ffb703;
+    text-shadow: 
+        0 0 20px #ffb703,
+        0 0 40px #fb8500,
+        0 0 60px rgba(255, 183, 3, 0.6);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.experience-desc {
+    font-size: 1.35rem;
+    color: #d0d0d0;
+    max-width: 520px;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.experience-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    background: rgba(255,183,3,0.1);
+    padding: 18px 35px;
+    border-radius: 50px;
+    border: 2px solid var(--accent);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(255,183,3,0.25);
+}
+
+.experience-badge i {
+    font-size: 2.4rem;
+    color: #ffb703;
+}
+
+/* Shield efekti */
+.shield-wrapper {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, #1e1e24, #2a2a32);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 0 60px rgba(255,183,3,0.5),
+        0 30px 60px rgba(0,0,0,0.7);
+    transition: all 0.6s ease;
+}
+
+.shield-wrapper i {
+    font-size: 180px;
+    color: #ffb703;
+    filter: drop-shadow(0 0 30px #fb8500);
+    transition: all 0.6s ease;
+}
+
+.shield-wrapper:hover {
+    transform: scale(1.08) rotate(8deg);
+}
+
+.shield-wrapper:hover i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 50px #ffb703);
+}
+
+/* Mobil için */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+    
+    .shield-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .shield-wrapper i {
+        font-size: 140px;
+    }
+}
+
+/* ====================== FİYAT HESAPLAMA - SELECT DÜZELTMELERİ ====================== */
+.input-group select {
+    background-color: #1e1e24;
+    color: #f5f5f5;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.input-group select option {
+    background-color: #1e1e24;
+    color: #f5f5f5;
+    padding: 12px 15px;
+}
+
+.input-group select option:hover,
+.input-group select option:checked {
+    background-color: #ffb703;
+    color: #111;
+    font-weight: bold;
+}
+
+/* Boşlukları azalt ve daha kompakt yap */
+.calc-container {
+    padding: 35px 30px;
+}
+
+.input-group {
+    margin-bottom: 14px;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html> 
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkan Oto Kurtarma | 7/24 Acil Yol Yardım</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <h2>Berkan <span>Kurtarma</span></h2>
+    </div>
+    <nav class="nav-links">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetlerimiz</a>
+        <a href="#hesaplama">Fiyat Hesapla</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+    </nav>
+    <div class="contact-btn">
+        <a href="tel:+905322742586" class="btn-primary">
+            <i class="fas fa-phone-alt"></i> Hemen Ara
+        </a>
+    </div>
+    <div class="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="anasayfa" class="hero">
+    <div class="hero-content">
+        <h1>Yolda Mı Kaldınız? <br><span>Dert Etmeyin!</span></h1>
+        <p>7/24 en hızlı oto kurtarma hizmeti. Konum gönderin, dakikalar içinde yanınızdayız.</p>
+        <a href="https://wa.me/905322742586" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp'tan Konum At
+        </a>
+    </div>
+</section>
+
+<!-- HİZMETLER -->
+<section id="hizmetler" class="services">
+    <h2 class="section-title">Hizmetlerimiz</h2>
+
+    <div class="service-cards">
+        <div class="card">
+            <i class="fas fa-truck-pickup"></i>
+            <h3>Oto Kurtarma</h3>
+            <p>Aracınızı güvenle çekiyoruz.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-car-battery"></i>
+            <h3>Akü Takviyesi</h3>
+            <p>Yerinde hızlı çözüm.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Şehirler Arası</h3>
+            <p>Tüm Türkiye'ye taşıma.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 🔥 FİYAT HESAPLAMA -->
+<section id="hesaplama" class="calculator-section">
+    <h2 class="section-title">Tahmini <span>Fiyat Hesapla</span></h2>
+
+    <div class="calc-container">
+
+        <!-- İL -->
+        <div class="input-group">
+            <select id="ilSelect">
+                <option value="">İl Seç</option>
+            </select>
+        </div>
+
+        <!-- İLÇE -->
+        <div class="input-group">
+            <select id="ilceSelect">
+                <option value="">İlçe Seç</option>
+            </select>
+        </div>
+
+        <!-- Nereden -->
+        <div class="input-group" style="position: relative;">
+            <i class="fas fa-map-marker-alt" style="color:#ffb703;"></i>
+            <input type="text" id="nereden" placeholder="Örn: Kadıköy, İstanbul" autocomplete="off">
+            <div id="nereden-list" class="autocomplete-list"></div>
+        </div>
+
+        <!-- Nereye -->
+        <div class="input-group" style="position: relative;">
+            <i class="fas fa-flag-checkered" style="color:#ffb703;"></i>
+            <input type="text" id="nereye" placeholder="Örn: Yalova Merkez" autocomplete="off">
+            <div id="nereye-list" class="autocomplete-list"></div>
+        </div>
+
+        <!-- Araç -->
+        <div class="input-group">
+            <i class="fas fa-car" style="color:#ffb703;"></i>
+            <select id="aracTipi">
+                <option value="1">Otomobil</option>
+                <option value="1.2">SUV / Jeep</option>
+                <option value="1.5">Hafif Ticari</option>
+                <option value="2">Ağır Ticari</option>
+            </select>
+        </div>
+
+        <!-- Konum -->
+        <button onclick="konumAl()" class="btn-primary" style="margin-bottom:15px; width: 100%; justify-content: center;">
+            <i class="fas fa-location-arrow"></i> Konumumu Kullan
+        </button>
+
+        <!-- Hesapla -->
+        <button onclick="fiyatHesapla()" class="btn-primary calc-btn">
+            <i class="fas fa-calculator"></i> Fiyatı Gör
+        </button>
+
+        <!-- Sonuç -->
+        <div id="sonuc-kutusu" class="result-box hidden">
+            <h3>Tahmini Ücret: <span id="fiyat">0 TL</span></h3>
+            <p id="mesafe-bilgisi"></p>
+
+            <a id="whatsappLink" target="_blank" class="btn-whatsapp" style="display:none; margin-top: 15px; justify-content: center;">
+                <i class="fab fa-whatsapp"></i> WhatsApp ile Gönder
+            </a>
+            
+            <div class="toll-warning" style="margin-top: 15px;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>
+                    <strong>Dikkat:</strong> Köprü, otoyol ve feribot ücretleri dahil değildir.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- HAKKIMIZDA - YENİ VERSİYON (Daha büyük + daha vurucu) -->
+<section id="hakkimizda" class="about">
+    <div class="about-container">
+        
+        <div class="about-text">
+            <h2 class="experience-title">
+                20 YILLIK <span class="highlight">TECRÜBE</span>
+            </h2>
+            
+            <p class="experience-desc">
+                20 yıllık deneyim ile güvenli ve hızlı hizmet sunuyoruz.
+            </p>
+            
+            <div class="experience-badge">
+                <i class="fas fa-award"></i>
+                <span>20 Yıl Kesintisiz Deneyim</span>
+            </div>
+        </div>
+
+        <div class="about-image">
+            <div class="shield-wrapper">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <h3>Berkan Oto Kurtarma</h3>
+        <p>7/24 Hizmet</p>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 | Baran ÖZSOY</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
